@@ -224,6 +224,69 @@ p {
   margin: 10%;
 }
 
+/*categories*/
+
+.categories {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.title {
+  text-align: center;
+  font-size: 4vmin;
+  color: #6b58b9;
+}
+
+.row.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hatcheries .row {
+  margin-top: 50px;
+}
+h4 {
+  font-size: 3vmin;
+  color: grey;
+  margin: 20px auto;
+}
+p {
+  color: gray;
+  padding: 0px 40px;
+}
+
+.hatcheries .ctn {
+  margin-top: 30px;
+}
+
+figcaption {
+  background-color: #6b58b9;
+  color: white;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
+.categories img {
+  padding-top: 20px;
+  float: left;
+  height: 350px;
+  width: 450px;
+}
+.map {
+  padding-top: 20px;
+}
+.table {
+  background: peachpuff;
+  text-align: center;
+  padding-top: auto;
+  width: 100%;
+  margin-top: 30px;
+  align-items: center;
+}
+
 /*purchase and donate*/
 
 .hatcheries h1 {
