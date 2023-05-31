@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+    <title>Purchase and donate</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a class="active" href="index..html">Home</a></li>
+            <li><a href="turtle categories.html">Turtle Categories</a></li>
+            <li><a href="test.html">Hikkaduwa Turtle Hatchery</a></li>
+            <li><a href="Threats to turtles.html">Threats to Turtles</a></li>
+            <li><a href="kosgoda bentota.html">Other Turtle Hatcheries</a></li>
+            <li><a href="purchase and donate.html">Purchase and Donate</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <!------JavaScript to toggle responsive Menu-->
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+</body>
+</html>
+        
+      
+      <section></section>
+
+      <div class="text-box">
+        <h1>purchase and donate</h1>
+        <div class="line"></div>
+        <p>
+        help us make a difference by purchasing a local product or making a small donation. 
+        </p>
+      </div>
+    </section>
+
+    <!--hatcheries-->
+
+  
+     <body style="background-color:palegoldenrod"></body>
+    <section class="hatcheries">
+      
+      <h1>Please feel free to select an item to purchase or make a small donation. 100% of the profits made from these purchases go towards supporting turtle hatchieries in Sri Lanka. </h1> 
+      
+      
+          <h2>Key chains</h2>
+          <div class="line"></div>
+          <p>A cute and colourful hand made turtle friend to attach to your keys.</p>
+          <p>Price: $5</p>
+          <img src="images/s-l1600.jpg" style="width:20em; height:15em">
+          <img src="images/d81e844c07687f18a3024e9135bcadcd--key-holders-turtles.jpg" style="width:20em; height:15em">
+          <img src="images/Sea_Turtle_Side_Realistic_Wood_Keychain_r1_grande.webp" style="width:20em; height:15em">
+          <button>purchase</button>
+
+          <h2>Key chains</h2>
+          <div class="line"></div>
+          <p>Carefully hand-crafted and unique glass pendants.</p>
+          <p>Price: $10</p>
+          <img src="images/IMG_3578_editgimp.webp" style="width:20em; height:15em">
+          <img src="images/il_340x270.614728127_7kn4.webp" style="width:20em; height:15em">
+          <img src="images/fullsizeoutput_48dc.webp" style="width:20em; height:15em">
+          <button>purchase</button>
+
+           <h2>Plushies</h2>
+          <div class="line"></div>
+          <p>brightent yours or your loved ones day by purchasing our soft and cuddly turtle plushies.</p>
+          <p>Price: $25</p>
+          <img src="images/89814_1024x.webp" style="width:30em; height:20em">
+           <img src="images/images (2).jfif" style="width:30em; height:20em">
+            <img src="images/41sENhp3WlL._AC_.jpg" style="width:30em; height:20em">
+          <button>purchase</button>
+
+      </section>
+
+      <section class="donate">
+        <h2>Support Our Cause</h2>
+          <p>Your generous donations will directly contribute to the advancement of healthcare and research initiatives dedicated to protecting and preserving sea turtles. With your support, we can ensure these magnificent creatures receive the utmost care and attention. Together, let's make a meaningful impact in securing a hopeful and thriving future for these incredible species.</p>
+
+          <form action="donate.php" method="post">
+            <label for="amount">Donation Amount:</label>
+            <input type="number" id="amount" name="amount" step="0.01" min="0.01" required><br><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <input type="submit" value="Donate">
+          </form>
+          </section>
+
+    <section class="footer">
+
+      <footer>
+        <p>Author: Seleena Wrigge<br>
+        <a href="CB011362@students.apiit.lk">CB011362@students.apiit.lk</a></p>
+      </footer>
+    </section>
+          
+</html>
