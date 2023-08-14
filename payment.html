@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+    <title>Purchase and donate</title>
+    <link rel="stylesheet" href="Buy tickets.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+   <div class="text">
+    <h1>Buy tickets</h1>
+    <div class="line"></div>
+     <h5>
+
+     <body>
+    <section class="header1">
+      <nav>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a class="active" href="index..html">Home</a></li>
+            <li><a href="Buy tickets.html">Buy Tickets</a></li>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="confirmation.html">Confirmation</a></li>
+   
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+     
+      <!------JavaScript to toggle responsive Menu-->
+
+  <script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+</section>
+<section class="hatcheries">
+<h2> Please enter your payment details below to continue with your purchase</h2>
+
+
+<form id="price-list">
+  <label for="cardNumber">Card Number:</label>
+  <input type="text" id="cardNumber" placeholder="Enter your card number" required><br>
+
+  <label for="expiryDate">Expiry Date:</label>
+  <input type="text" id="expiryDate" placeholder="MM/YY" required><br>
+
+  <label for="cvc">CVC / CVV:</label>
+  <input type="text" id="cvc" placeholder="Enter CVC/CVV" required><br>
+
+  <label for="nameOnCard">Name on Card:</label>
+  <input type="text" id="nameOnCard" placeholder="Enter name on card" required><br>
+
+  <button type="button" id="payButton" disabled>Pay <span id="amount">0</span> USD</button>
+</form>
+
+<div class="container1">
+<table id="summary-table">
+   <thead>
+     <tr>
+       <th>Card Number</th>
+       <th>Expiry Date</th>
+       <th>CVC/CVV</th>
+       <th>Name on Card</th>
+       <th>Amount</th>
+     </tr>
+   </thead>
+   <tbody>
+     <!-- Rows for guest types and durations will be added here dynamically using JavaScript -->
+   </tbody>
+   <tfoot>
+     <tr>
+       <td><strong></strong></td>
+       <td><strong></strong></td>
+       <td></td>
+       <td><strong></strong></td>
+     </tr>
+   </tfoot>
+ </table>
+
+
+
+       
+
+<script>document.addEventListener("DOMContentLoaded", function () {
+  const cardNumberInput = document.getElementById("cardNumber");
+  const expiryDateInput = document.getElementById("expiryDate");
+  const cvcInput = document.getElementById("cvc");
+  const nameOnCardInput = document.getElementById("nameOnCard");
+  const payButton = document.getElementById("payButton");
+  const amountSpan = document.getElementById("amount");
+  const summaryTable = document.getElementById("summary-table");
+
+  function updateSummary() {
+    localStorage.setItem("cardNumber", cardNumberInput.value);
+    localStorage.setItem("expiryDate", expiryDateInput.value);
+    localStorage.setItem("cvc", cvcInput.value);
+    localStorage.setItem("nameOnCard", nameOnCardInput.value);
+  
+  }
+
+  function loadSummary(){
+    cardNumberInput.value = localStorage.getItem("cardNumber") || "";
+    expiryDateInput.value = localStorage.getItem("cardNumber") || "";
+    cvcInput.value = localStorage.getItem("cardNumber") || "";
+    nameOnCardInput.value = localStorage.getItem("cardNumber") || "";
+  }
+
+  // Event listener for input fields
+  cardNumberInput.addEventListener("input", validatePaymentForm);
+  expiryDateInput.addEventListener("input", validatePaymentForm);
+  cvcInput.addEventListener("input", validatePaymentForm);
+  nameOnCardInput.addEventListener("input", validatePaymentForm);
+
+  function validatePaymentForm() {
+    const cardNumber = cardNumberInput.value.trim();
+    const expiryDate = expiryDateInput.value.trim();
+    const cvc = cvcInput.value.trim();
+    const nameOnCard = nameOnCardInput.value.trim();
+
+    const cardNumberPattern = /^\d{16}$/; // Simplified pattern for demonstration
+    const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
+    const cvcPattern = /^\d{3,4}$/;
+
+    const isCardNumberValid = cardNumberPattern.test(cardNumber);
+    const isExpiryDateValid = expiryDatePattern.test(expiryDate);
+    const isCvcValid = cvcPattern.test(cvc);
+    const isNameOnCardValid = nameOnCard !== "";
+
+    const isValid =
+      isCardNumberValid && isExpiryDateValid && isCvcValid && isNameOnCardValid;
+
+    payButton.disabled = !isValid;
+
+    // You can provide feedback to the user about validation errors here
+    // For example, update the border color of the input fields
+    cardNumberInput.style.border = isCardNumberValid
+      ? "1px solid #ccc"
+      : "1px solid red";
+    expiryDateInput.style.border = isExpiryDateValid
+      ? "1px solid #ccc"
+      : "1px solid red";
+    cvcInput.style.border = isCvcValid ? "1px solid #ccc" : "1px solid red";
+    nameOnCardInput.style.border = isNameOnCardValid
+      ? "1px solid #ccc"
+      : "1px solid red";
+  
+
+      
+  summaryTable.innerHTML = `
+      <tbody>
+        <tr>
+          <td><strong>Card Number</strong></td>
+          <td>${cardNumber}</td>
+          <td><strong>Expiry Date</strong></td>
+          <td>${expiryDate}</td>
+          <td><strong>CVC / CVV</strong></td>
+          <td>${cvc}</td>
+          <td><strong>Name on Card</strong></td>
+          <td>${nameOnCard}</td>
+          <td><strong>Amount</strong></td>
+          <td>${amount}</td>
+        </tr>
+      </tbody>
+    `;
+
+
+    
+
+    // Append the new row to the summary table
+    summaryTable.appendChild(newRow);
+
+
+    
+    // Redirect to the confirmation page
+    window.location.href = "confirmation.html"; // Replace with the actual confirmation page URL
+  }
+});
+
+</script>
+<body>
+</html>

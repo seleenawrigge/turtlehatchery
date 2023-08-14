@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+    <title>Purchase and donate</title>
+    <link rel="stylesheet" href="Buy tickets.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <div class="text">
+  <h1>Buy tickets</h1>
+  <div class="line"></div>
+  
+
+
+     <body>
+    <section class="header1">
+      <nav>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a class="active" href="index..html">Home</a></li>
+            <li><a href="Buy tickets.html">Buy Tickets</a></li>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="confirmation.html">Confirmation</a></li>
+   
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+     
+      <!------JavaScript to toggle responsive Menu-->
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+</body>
+</html>
+
+
+</section>
+
+
+    </section>
+
+
+
+  <h2>Enter your details</h2>
+  <form id="details-form">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" required>
+    
+ 
+    
+  <label for="mobileNumber">Mobile Number:</label>
+  <select id="countryCode">
+      <select id="countryCode">
+        
+  
+   
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    
+    <label for="confirmEmail">Confirm Email:</label>
+    <input type="email" id="confirmEmail" required>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    
+
+  </form>
+
+  <table id="summary-table">
+   <thead>
+     <tr>
+      <th>Name</th>
+       <th>Email</th>
+       <th>mobileNumber</th>
+     </tr>
+   </thead>
+   <tbody>
+     <!-- Rows for guest types and durations will be added here dynamically using JavaScript -->
+   </tbody>
+
+  <script>
+    
+function validateInputs () {
+  const fullNameInput = document.getElementById('fullName');
+  const mobileNumberInput = document.getElementById('mobileNumber');
+  const emailInput = document.getElementById('email');
+  const confirmEmailInput = document.getElementById('confirmEmail');
+  const genderSelect = document.querySelector('input[name="gender"]');
+  const summaryTable = document.getElementById('summary-table');
+
+  if (gender) {
+    localStorage.setItem('gender, gender.value');
+  } else {
+    localStorage.removeItem('gender');
+  }
+  const formValidation = fullName && email && mobileNumber && confirmEmail;
+
+  const continueBtn = document.getElementById('continueBtn');
+  continueBtn.disabled = !formValidation;
+}
+
+// intl-tel-input
+
+var input = document.querySelector("mobileNumber");
+var iti = window.intlTellInput(input, {
+  seperateDialCode: true,
+  initialCountry: "auto",
+  geoIpLookup: function(success, failure) {
+
+  }
+})
+
+// save inputs 
+
+document.getElementById('details-form').addEventListener('change', () => {
+  const fullName = document.getElementById('fullName').value;
+  const email = document.getElementById('email').value;
+  const mobileNumber = document.getElementById('mobileNumber');
+  const confirmEmail = document.getElementById('confirmEmail').value;
+  const genderInput = document.querySelector('input[name="gender"]:checked');
+  const gender = genderInput ? genderInput.value: null;
+  const getSelectedCountryCode = iti.getSelectedCountryCode().iso2;
+  const dialingCode = iti.getSelectedCountryCode().dialCode;
+
+  localStorage.setItem('fullName', name);
+  localStorage.setItem('email', email);
+  localStorage.setItem('confirmEmail', confirmEmail);
+  localStorage.setItem('mobileNumber', mobileNumber);
+  localStorage.setItem('selectedCountryCode', iti.getSelectedCountryCode().iso2);
+  localStorage.setItem('dialingCode', iti.getSelectedCountryCode().dialCode);
+})
+
+// validation function called when input changes
+
+validateInputs();
+
+function saveSelectedCountryCode(selectedCountryCode) {
+  localStorage.setItem('selectedCountryCode', selectedCountryCode);
+
+}
+
+function loadSelectedCountryCode() {
+  localStorage.getItem('selectedCountryCode')
+}
+
+function saveDialingCode(dialingCode) {
+  localStorage.setItem('dialingCode', dialingCode);
+}
+
+function loadDialingCode() {
+  return localStorage.getItem('dialingCode');
+}
+
+function setSelectedCountry(countryCode) {
+  iti.setCountry(countryCode) 
+  }
+
+  input.addEventListener("countrychange", (e) => {
+    const selectedCountry = iti.getSelectedCountryCode().iso2;
+    saveSelectedCountryCode(selectedCountryCode);
+
+    const SelectedCountryData = iti.getSelectedCountryCode();
+    const dialingCode = SelectedCountryData.dialCode;
+
+    saveSelectedCountry(selectedCountryCode.iso2);
+    saveDialingCode(dialingCode);
+
+    validateInputs();
+  })
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('fullName').value = localStorage.getItem('fullName');
+    document.getElementById('email').value = localStorage.getItem('email');
+    document.getElementById('confirmEmail').value = localStorage.getItem('confirmEmail');
+    document.getElementById('mobileNumber').value = localStorage.getItem('mobileNumber');
+  
+  })
+  const savedCountry = loadSelectedCountryCode ();
+  if (savedCountry) {
+    setSelectedCountry(savedCountry);
+
+  }
+  const savedDialingCode = loadDialingCode();
+
+  if (savedDialingCode) {
+    const dialingCodeElement = document.getElementById('dialingCode');
+  }
+
+  const savedgender = localStorage.getItem('gender');
+
+  if (savedgender) {
+    const genderInput = document.querySelector(input[name="gender"]
+    [value="$(savedgender)"]);
+    if (genderInput) {
+      genderInput.checked = true;
+
+    }
+  }
+
+  function updateSummary() {
+    const fullName = fullNameInput.value.trim();
+    const mobileNumber = mobileNumberInput.value.trim();
+    const email = emailInput.value.trim();
+    const confirmEmail = confirmEmailInput.value.trim();
+    const gender = genderSelect.value;
+    const summaryTable = document.getElementById("summary-table");
+
+ }
+ 
+
+  
+  const countryCodeSelect = document.getElementById('countryCode');
+  const mobileNumberInput = document.getElementById('mobileNumber');
+
+  const iti = window.intlTelInput(countryCodeSelect, {
+    separateDialCode: true,
+    initialCountry: 'auto',
+  geoIpLookup: function(success, failure) {
+      // Perform your own GeoIP lookup and pass the country code to success or failure
+      // Example:
+      // success('US');
+    }
+  });
+
+  fullNameInput.addEventListener('input', updateSummary);
+  mobileNumberInput.addEventListener('input', updateSummary);
+  emailInput.addEventListener('input', updateSummary);
+  confirmEmailInput.addEventListener('input', updateSummary);
+  genderSelect.addEventListener('change', updateSummary);
+;
+
+
+  summaryTable.innerHTML = `
+      <tbody>
+        <tr>
+          <td><strong>Full Name</strong></td>
+          <td>${fullName}</td>
+          <td><strong>Mobile Number</strong></td>
+          <td>${mobileNumber}</td>
+          <td><strong>Email</strong></td>
+          <td>${email}</td>
+        </tr>
+      </tbody>
+    `;
+
+
+    
+
+    // Append the new row to the summary table
+    summaryTable.appendChild(newRow);
+
+</script>
+
+
+</body>
+</html>

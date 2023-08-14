@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purchase and donate</title>
+    <link rel="stylesheet" href="Buy tickets.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+          <div class="text">
+          <h1>Buy tickets</h1>
+          <div class="line"></div>
+          <h5>
+
+     <body>
+    <section class="header1">
+      <nav>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a class="active" href="index..html">Home</a></li>
+            <li><a href="Buy tickets.html">Buy Tickets</a></li>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="confirmation.html">Confirmation</a></li>
+   
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <!------JavaScript to toggle responsive Menu-->
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+</body>
+</html>
+
+      
+  
+
+<!-----Dates-->
+</section>
+
+
+
+    </section>
+
+
+
+
+        <section></section>
+  
+ 
+     <body style="background-color:#6b58b9"></body>
+     
+
+      <body>
+    <div class="container">
+      <div class="calendar">
+        <div class="header">
+          <div class="month"></div>
+          <div class="btns">
+            <div class="btn today-btn">
+              <i class="fas fa-calendar-day"></i>
+            </div>
+            <div class="btn prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="btn next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="weekdays">
+          <div class="day">Sun</div>
+          <div class="day">Mon</div>
+          <div class="day">Tue</div>
+          <div class="day">Wed</div>
+          <div class="day">Thu</div>
+          <div class="day">Fri</div>
+          <div class="day">Sat</div>
+        </div>
+        <div class="days">
+          <!-- lets add days using js -->
+        </div>
+      </div>
+    </div>
+
+
+
+<!--Guests-->
+
+    <section class="book">
+      <div class="container flex_space">
+        <div claass="text">
+          <h1> <span>Select </span> Number of Guests </h1>
+          <div>
+            <div class="form">
+              <form class="grid">
+                <input type="number" id="sLadult" placeholder="SL adult"> <br> <p>Above 15 years</p>
+                    <input type="number" id="sLchild" placeholder="SL child"> <br> <p>5-14 years</p>
+                    <input type="number" id="foreigneradult" placeholder="Foreigner adult"> <br> <p>Above 15 years</p>
+
+                    <input type="number" id="foreignerchild" placeholder="Foreigner child"> <br> <p>5-14 years</p>
+
+                    <input type="number" id="infant" placeholder="Infant"> <br> <p>Under 4 years</p>
+
+
+
+              </form>
+            </div>
+          </div>
+
+<!---Durtaion-->
+
+<div class="duration-dropdown">
+  <label for="duration">Select Duration:</label>
+  <select id="duration" class="dropdown" multiple>
+    <option value="7-8">07.00 am - 08.00 am</option>
+    <option value="8-9">08.00 am - 09.00 am</option>
+    <option value="9-10">09.00 am - 10.00 am</option>
+    <option value="10-11">10.00 am - 11.00 am</option>
+    <option value="11-12">11.00 am - 12.00 pm</option>
+    <option value="12-01">12.00 pm - 01.00 pm</option>
+    <option value="01-02">01.00 pm - 02.00 pm</option>
+    <option value="02-03">02.00 pm - 03.00 pm</option>
+    <option value="03-04">03.00 pm - 04.00 pm</option>
+    <option value="04-05">04.00 pm - 05.00 pm</option>
+    <option value="05-06">05.00 pm - 06.00 pm</option>
+  </select>
+</div>
+<div class="duration-checkboxes">
+     <label>Select Duration:</label>
+     <div>
+       <input type="checkbox" id="duration-7-8" class="duration-checkbox" value="7-8">
+       <label for="duration-7-8">07.00 am - 08.00 am</label>
+     </div>
+     <div>
+       <input type="checkbox" id="duration-8-9" class="duration-checkbox" value="8-9">
+       <label for="duration-8-9">08.00 am - 09.00 am</label>
+     </div>
+     <div>
+  <input type="checkbox" id="duration-9-10" class="duration-checkbox" value="9-10">
+  <label for="duration-9-10">09.00 am - 10.00 am</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-10-11" class="duration-checkbox" value="10-11">
+  <label for="duration-10-11">10.00 am - 11.00 am</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-11-12" class="duration-checkbox" value="11-12">
+  <label for="duration-11-12">11.00 am - 12.00 pm</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-12-1" class="duration-checkbox" value="12-01">
+  <label for="duration-12-1">12.00 pm - 01.00 pm</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-1-2" class="duration-checkbox" value="01-02">
+  <label for="duration-1-2">01.00 pm - 02.00 pm</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-2-3" class="duration-checkbox" value="02-03">
+  <label for="duration-2-3">02.00 pm - 03.00 pm</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-3-4" class="duration-checkbox" value="03-04">
+  <label for="duration-3-4">03.00 pm - 04.00 pm</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-4-5" class="duration-checkbox" value="04-05">
+  <label for="duration-4-5">04.00 pm - 05.00 pm</label>
+</div>
+<div>
+  <input type="checkbox" id="duration-5-6" class="duration-checkbox" value="05-06">
+  <label for="duration-5-6">05.00 pm - 06.00 pm</label>
+</div>
+
+ </div>
+
+
+<table id="price-list">
+  <thead>
+    <p>Please note that every day from 10.00 am to 1.00 pm and from 3.00 pm to 6.00 pm will be considered as Peak hours.</p>
+    <tr>
+      <th>Ticket Type</th>
+      <th>Normal Hour Charge (USD)</th>
+      <th>Peak Hour Charge (USD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Foreigner Adult</td>
+      <td>10</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>Foreigner Child</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>SL Adult</td>
+      <td>4</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>SL Child</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="summary-table">
+   <thead>
+     <tr>
+      <th>Date</th>
+       <th>Ticket Category</th>
+       <th>Quantity</th>
+       <th>Charge per Ticket</th>
+       <th>Total Charge</th>
+     </tr>
+   </thead>
+   <tbody>
+     <!-- Rows for guest types and durations will be added here dynamically using JavaScript -->
+   </tbody>
+   <tfoot>
+     <tr>
+       <td><strong>Total Payable</strong></td>
+       <td><strong></strong></td>
+       <td></td>
+       <td><strong></strong></td>
+     </tr>
+   </tfoot>
+ </table>
+  <button id="purchase-button" disabled>Continue with purchase</button>
+</div>
+    <!-- SCRIPT -->
+    <script src="buy tickets.js"></script>
+
+  </body>
+</html>
